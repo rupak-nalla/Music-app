@@ -1,7 +1,7 @@
 # MUSIC STREAMING APP
 
-Introduction:
-	 Music Streaming app is a multi user music listening platform, where users can listening songs and enjoy their lesuire time.Users can also register themselves as creators and upload their songs and create albums and monitor their performance on dashboard
+## Introduction:
+Music Streaming app is a multi user music listening platform, where users can listening songs and enjoy their lesuire time.Users can also register themselves as creators and upload their songs and create albums and monitor their performance on dashboard
 
 # Getting started:
 
