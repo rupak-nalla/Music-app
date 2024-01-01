@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title>Creator Dashboard</title>
+          <link rel="stylesheet" href="/static/css/style.css">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+               
+               .nav-link,.active{
+                    background-color: #778DA9;
+               }
+               .nav-item{
+                    background-color: #0D1B2A;
+               }
+               .inner-card{
+                    display: inline;
+               }
+               .title{
+                    display: flex;
+                    justify-content: left;
+
+               }
+               .buttons{
+                    display: flex;
+                    justify-content: right;
+               }
+          </style>
+          <link rel="stylesheet" href="/static/css/style.css">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     </head>
+     <body>
+          <header>
+               <nav style=" padding-top:0px;padding-bottom: 0px;" class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid" style="background-color: #0D1B2A;">
+                         <a class="navbar-brand" id="text" href="#">Music Streaming app</a>
+                         <button class="navbar-toggler"  data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon">
+                              
+                         </span>
+                         </button>
+                         
+                         <div class="collapse navbar-collapse" id="navbarTogglerDemo02" >
+                              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                   {%if(Creator.blacklist==0)%}
+                                        <li class="nav-item">
+                                             <a class="nav-link active" id="text" aria-current="page" href="/Creator/{{user.id}}/UploadSong"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-upload-fill" viewBox="0 0 16 16">
+                                                  <path fill-rule="evenodd" d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0m-.5 14.5V11h1v3.5a.5.5 0 0 1-1 0"/>
+                                                </svg>
+                                                  upload Song</a>
+                                        </li>
+                                        <li class="nav-item">
+                                             
+                                             <a class="nav-link active" id="text" aria-current="page" href="/Creator/{{user.id}}/CreateAlbum">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-album" viewBox="0 0 16 16">
+                                                       <path d="M5.5 4a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5zm1 7a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
+                                                       <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                                                       <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                                                     </svg>create album</a>
+                                        </li>
+                                   {%endif%}
+                                   
+                                   <li class="nav-item">
+                                        <a class="nav-link active" id="text" href="/Home/{{user.id}}">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                                </svg>user account</a>
+                                   </li>
+                                   <li class="nav-item">
+                                        <a class="nav-link active" id="text" href="/">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                                                  <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+                                                  </svg>logout</a>
+                                   </li>
+                              </ul>
+                         
+                         </div>
+                    </div>
+               </nav>
+          </header>
+          <div id="main" style="padding: 10px;">
+               
+               <div class="card text-center" style="background-color: #778DA9;color: #0D1B2A;">
+                    <div class="card-header"><h3>Dash Board</h3>
+                         {%if(Creator.blacklist==1)%}
+                              <h3>You have been blacklisted by the company</h3>
+                         {%endif%}
+                    </div>
+                    <div class="card-body" style="display: flex;justify-content:center">
+                         <div class="row">
+                           <div class="col" id="profile">
+                             
+                             {%if(not profile)%}
+                                   <img class="card-img-top" src="/static/images/Profile.png" style="max-width: 50%;max-height: 50%;margin: auto;display: block;padding:5px;align-self:center;object-fit: contain;" alt="Title">
+                              {%else%}
+                                   <img class="" src="/static/images/{{user.id}}Profile.jpg"  width="100px" height="100px" style="max-width: 50%;max-height: 50%;border-radius: 50%;margin: auto;display: block;padding:5px;align-self:center;object-fit: cover;" alt="Title">
+                              {%endif%}
+                               <div class="card-body">
+                                 <h5 class="card-title text-truncate">{{user.UserName}}</h5>
+                                 <form action="/Creator/{{user.id}}/edit" method="POST" style="margin:5px;">
+                                   {%if(edit)%}
+                                   <div class="form-floating">
+                                      <textarea class="form-control" placeholder="Tell about yourself" id="floatingTextarea2" style="height: 100px" name="bio" ></textarea>
+                                      <label for="floatingTextarea2">Bio</label>
+                                   </div>
+                                   <button style="margin-top:5px" type="submit" class="btn btn-primary">Submit</button>
+                                   {%else%}
+                                    <div id="info">
+                                        <p class="card-text">{{Creator.Bio}}</p>
+                                     </div>
+                                   {%endif%}
+                                   
+                                 </form>
+                                 <a href="/Creator/{{user.id}}/edit" class="btn btn-primary">edit Bio</a>
+                                 
+                               </div>
+                             
+                           </div>
+                              <div class="col" >
+                                <div class="card text-center" style="background-color: #E0E1DD;padding-top:0px;border-radius: 30px;">
+                                  <div class="card-header">
+                                             <h3 class="">Total songs </h3>
+                                        </div>
+                                        <div class="card-body">
+                                             <h2>{{Scount}}</h2>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="col">
+                                   <div class="card text-center" style="background-color: #E0E1DD;padding-top:0px;border-radius: 30px;">
+                                        <div class="card-header">
+                                             <h3>Average rating</h3>
+                                        </div>
+                                        <div class="card-body">
+                                             <h2>{{AvgRating}}</h2>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="col" >
+                                <div class="card text-center" style="background-color: #E0E1DD;padding-top:0px;border-radius: 30px;">
+                                  <div class="card-header">
+                                             <h3>Total Albums</h3>
+                                        </div>
+                                        <div class="card-body">
+                                             <h2>{{Acount}}</h2>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <div class="card" style="padding: 10px;margin-top:10px;background-color: #778DA9; color: #0D1B2A;">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #0D1B2A;">
+                         <li class="nav-item" role="presentation">
+                           <button class="nav-link active"   id="home-tab" data-bs-toggle="tab"  data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"> <h3>Your Uploads</h3></button>
+                         </li>
+                         <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="albums-tab" data-bs-toggle="tab" data-bs-target="#albums-tab-pane" type="button" role="tab" aria-controls="albums-tab-pane" aria-selected="false"> <h3>Albums</h3></button>
+                            </li>
+                         <li class="nav-item" role="presentation">
+                           <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"> <h3>Insights</h3></button>
+                         </li>
+                         
+                       </ul>
+                       <div class="tab-content" id="myTabContent">
+                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                              <div class="card-body" >
+                              {%if (Songs|length==0)%}
+                                   <h5>Add songs now</h5>
+                              {%else%}
+                                   {%for i in range(Songs|length)%}
+                                   <div class="card" style="margin: 10px;" >
+                                        
+                                        <div class="card-body inner-card" style="display: flex;align-items:center;">
+                                             <div class="card-body">
+                                                  <h4>{{Songs[i].SongName}}</h4>
+                                             </div>
+                                             
+                                             <div style="float: right;">
+                                                  <button style="margin-left:5px" class="btn btn-primary"><a href="/Song/{{user.id}}/{{Songs[i].Sid}}/play" style="color: white;text-decoration: none;">Play</a>
+                                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                                                       </svg>
+                                                  </button>
+                                                  <button style="margin-left:5px" class="btn btn-primary">
+                                                  <a href="/Creator/{{user.id}}/Song/{{Songs[i].Sid}}/edit" style="color: white;text-decoration: none;">
+                                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                       </svg>
+                                                       edit
+                                                  </a>
+                                                       
+                                                  </button>
+                                                  <button style="margin-left:5px" class="btn btn-primary">
+                                                       <a href="/{{user.id}}/Song/{{Songs[i].Sid}}/delete" style="color: white;text-decoration: none;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                       <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                                                  </svg>
+                                                  delete</a>
+                                                       
+                                                       
+                                                  </button>
+                                             </div>
+                                             
+                                        </div>
+                                        
+                                        
+                                   </div>
+                                   {%endfor%}
+                              {%endif%}
+                                   
+                              </div>
+                         </div>
+                         <div class="tab-pane fade" id="albums-tab-pane" role="tabpanel" aria-labelledby="albums-tab" tabindex="0">
+                              <div class="card-body" >
+                                   {%if (albums|length==0)%}
+                                        <h5>Create Albums now</h5>
+                                   {%else%}
+                                        {%for i in range(albums|length)%}
+                                        <div class="card" style="margin: 10px;">
+                                             
+                                             <div class="card-body inner-card" style="display: flex;align-items:center">
+                                                  <div class="card-body">
+                                                       <h4>{{albums[i].AlbumName}}</h4>
+                                                  </div>
+                                                  
+                                                  <div style="float: right;">
+                                                       <button style="margin-left:5px" class="btn btn-primary"><a href="/{{user.id}}/Album/{{albums[i].Aid}}/View" style="color: white;text-decoration: none;">view</a>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                                                 <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                                                            </svg>
+                                                       </button>
+                                                       <button style="margin-left:5px" class="btn btn-primary">
+                                                       <a href="/Creator/{{user.id}}/Album/{{albums[i].Aid}}/edit" style="color: white;text-decoration: none;">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                            </svg>
+                                                            edit
+                                                       </a>
+                                                            
+                                                       </button>
+                                                       <button style="margin-left:5px" class="btn btn-primary">
+                                                            <a href="/Creator/{{user.id}}/Album/{{albums[i].Aid}}/delete" style="color: white;text-decoration: none;">
+                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                                                       </svg>
+                                                       delete</a>
+                                                            
+                                                            
+                                                       </button>
+                                                  </div>
+                                                  
+                                             </div>
+                                             
+                                             
+                                        </div>
+                                        {%endfor%}
+                                   {%endif%}
+                                        
+                                   </div>
+                         </div>
+                         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                              <div style=" display:flex;">
+                                   <div class="card" style="width: 500px;height:300px;margin-right:10px;background-color: #E0E1DD;">
+                                     <div class="card-header">
+                                       <h3>Most streamed songs</h3>
+                                     </div>
+                                     <div class="card-body" style="display:flex;">
+                                       <canvas id="myChart1"></canvas>
+       
+                                     </div>
+       
+                                   </div>
+                                   <div class="card" style="width: 500px;height:300px;background-color: #E0E1DD;">
+                                     <div class="card-header">
+                                       <h3>Most rated songs</h3>
+                                     </div>
+                                     <div class="card-body" style="display:flex;">
+                                       <canvas id="myChart2"></canvas>
+       
+                                     </div>
+       
+                                   </div>
+                                 </div>
+                         </div>
+                    </div>
+                    
+                    <!--  -->
+               </div>
+          </div>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <script>
+               let ctx = document.getElementById('myChart1');
+               let chartData1={{chartData1|tojson|safe}};
+               new Chart(ctx, {
+                 type: 'bar',
+                 
+                 data: {
+                   labels:chartData1.MSSongNamesArr,
+                   datasets: [{
+                     label: 'No of streams',
+                     data:  chartData1.MSNoArr,
+                     borderWidth: 1,
+                     backgroundColor: ['#1B263B']
+                   }]
+                 },
+                 options: {
+                   scales: {
+                     y: {
+                       beginAtZero: true,
+                       max:chartData1.MAXy+3
+                     }
+                   }
+                 }
+               });
+                ctx = document.getElementById('myChart2');
+                chartData2={{chartData2|tojson|safe}};
+                new Chart(ctx, {
+                  type: 'bar',
+      
+                  data: {
+                    labels:chartData2.MRSongNamesArr,
+                    datasets: [{
+                      label: 'Rating',
+                      data:  chartData2.MRNoArr,
+                      borderWidth: 1,
+                      backgroundColor: ['#1B263B']
+                    }]
+                  },
+                  options: {
+                    scales: {
+                      y: {
+                        beginAtZero: true,
+                        max:chartData2.MAXy+3
+                      }
+                    }
+                  }
+                });
+             </script>
+     </body>
+</html>

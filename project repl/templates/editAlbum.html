@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <link rel="stylesheet" href="/static/css/style.css">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+               .inner-card{
+                    display: inline;
+               }
+               .title{
+                    display: flex;
+                    justify-content: left;
+
+               }
+               .buttons{
+                    display: flex;
+                    justify-content: right;
+               }
+               a:hover{
+                color: white;
+                text-decoration: none;
+               }
+          </style>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     </head>
+     <body>
+          <header>
+               <nav  class="navbar navbar-expand-lg bg-body-tertiary" style="padding-top: 0px;padding-bottom: 0px;">
+                    <div class="container-fluid" >
+                         <a class="navbar-brand" href="#" id="text">Music Streaming app</a>
+                         <button class="navbar-toggler"  data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon">
+                                   
+                              </span>
+                         </button>
+                         
+                         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                   <li class="nav-item">
+                                        <a class="nav-link active" id="text" aria-current="page" href="/Creator/{{userid}}">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                                                  <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+                                                  <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/>
+                                                </svg>
+                                             Dashboard</a>
+                                   </li>
+                                   <li class="nav-item">
+                                        <a class="nav-link active" id="text" href="/Home/{{userid}}">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                             </svg>User account</a>
+                                   </li>
+                                   <li class="nav-item">
+                                        <a class="nav-link active" id="text" href="/">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                                             <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+                                        </svg>logout</a>
+                                   </li>
+                              </ul>
+                              
+                         </div>
+                    </div>
+               </nav>
+          </header>
+          <div id="main" style="">
+            <form action="/Creator/{{userid}}/Album/{{albums.Aid}}/edit" method="post" id="myForm">
+                <div style="display: flex;justify-content:center;align-items:center">
+                    <div>
+                        {%if(error)%}
+                              <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                   <div>
+                                   Album name already exists use different name
+                                   </div>
+                              </div>
+                         {%endif%}
+                         <div class="form-floating mb-3" style="margin: 5px;">
+                              <input type="text" class="form-control" id="floatingInput"  name="AlbumName" placeholder="Album Name" value="{{albums.AlbumName}}" required>
+                              <label for="floatingInput" style="color: black;">Enter Album name</label>
+                              
+                         </div>
+                         <div class="form-floating mb-3">
+                              <input type="text" name="artistName" class="form-control" id="floatingInput" placeholder="artistName" value="{{albums.artistName}}">
+                              <label for="floatingInput" style="color: black;">Artist Name</label>
+                         </div>
+                         <select class="form-select" name="Genre" aria-label="Default select example" style="margin: 10px 0px;">
+                            {%if(albums.Genre=="Love")%}
+                                <option value="Love" selected>Love</option>
+                            {%else%}
+                                <option value="Love" >Love</option>
+                            {%endif%}
+                              
+                            {%if(albums.Genre=="Devotional")%}
+                                <option value="Devotional" selected>Devotional</option>
+                            {%else%}
+                                <option value="Devotional">Devotional</option>
+                            {%endif%}
+                              
+                            {%if(albums.Genre=="HipHop")%}
+                                <option value="HipHop" selected>HipHop</option>
+                            {%else%}
+                                <option value="HipHop">HipHop</option>
+                            {%endif%}
+                              
+
+                            {%if(albums.Genre=="Rock")%}
+                                <option value="Rock" selected>Rock</option>
+                            {%else%}
+                                <option value="Rock">Rock</option>
+                            {%endif%}
+                              
+                            {%if(albums.Genre=="Country")%}
+                                <option value="Country" selected>Country</option>
+                            {%else%}
+                                <option value="Country">Country</option>
+                            {%endif%}
+                              
+                            </select>
+                    </div>
+                    
+                    <div style="margin-left:5px ;">
+                         <button class="btn btn-outline-primary" id="submitButton" type="submit">Create</button>
+                    </div>
+               </div>
+               <div class="col">
+                    <div class="row">
+                        {%for i in range(songs|length)%}
+                            {%if(songs[i].album_id==albums.Aid)%}
+                                
+                                <div class="card" style="margin: 10px;width:400px;border-width: 0px; border-radius: 10px;padding: 0px;">
+                                        <div class="card-body inner-card" style="display: flex;align-items:center;background-color: #415A77;border-width: 0px;border-radius: 10px;">
+                                            <div class="card-body">
+                                                    <h4>{{songs[i].SongName}}</h4>
+                                            </div>
+                                            <div class="form-check" style="float: right;">
+                                                    <input class="form-check-input" type="checkbox" name="Checkedsongs" id="flexCheckDefault" value="{{songs[i].Sid}}" checked>
+                                            </div>
+                                        </div>
+                                </div>
+                            {%endif%}
+                            {%if(not songs[i].album_id)%}
+                              
+                                   <div class="card" style="margin: 10px;width:400px;border-width: 0px; border-radius: 10px;padding: 0px;">
+                                             <div class="card-body inner-card" style="display: flex;align-items:center;background-color: #415A77;border-width: 0px;border-radius: 10px;">
+                                                  <div class="card-body">
+                                                       <h4>{{songs[i].SongName}}</h4>
+                                                  </div>
+                                                  <div class="form-check" style="float: right;">
+                                                       <input class="form-check-input" type="checkbox" name="Checkedsongs" id="flexCheckDefault" value="{{songs[i].Sid}}">
+                                                  </div>
+                                             </div>
+                                   </div>
+                              
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                    
+               </div>
+                    
+               
+               
+               
+            </form> 
+          </div>
+          <script>
+               document.addEventListener('DOMContentLoaded', function() {
+                 var form = document.getElementById('myForm');
+                 var submitButton = document.getElementById('submitButton');
+                 
+                 submitButton.addEventListener('click', function(event) {
+                   var checkboxes = document.getElementsByName('Checkedsongs');
+                   var isChecked = false;
+                   
+                   for (var i = 0; i < checkboxes.length; i++) {
+                     if (checkboxes[i].checked) {
+                       isChecked = true;
+                       break;
+                     }
+                   }
+                   
+                   if (!isChecked) {
+                     event.preventDefault();
+                     alert('Please select at least one checkbox.');
+                   }
+                 });
+               });
+               </script>
+     </body>
+</html>

@@ -1,0 +1,114 @@
+a:hover{
+    color:white;
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 5%;
+}
+.card{
+    margin:10px;
+    border-radius: 30px;
+    background-color: #778DA9;
+    color: #0D1B2A;
+}
+.card-img-top{
+    padding:10px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+#text{
+    color: #778DA9;
+}
+.container-fluid{
+    padding-top:10px;
+    padding-bottom:10px;
+    /* background-color: #0D1B2A; */
+    
+}
+#main{
+    background-color: #1B263B;
+    color: white;
+}
+.navbar{
+    padding-top:0px;
+    padding-bottom: 0px;
+}
+
+
+button{
+    border: 0;
+    border-radius: 10px;
+    margin:5px;
+    padding: auto;
+}
+html{
+    font-family:'Times New Roman', Times, serif ;
+    background-color:#1B263B;
+}
+
+#contain:hover{
+    background: #ffffff;
+    background: #ffffff;
+    box-shadow:  24px 24px 38px #cacaca,
+              -24px -24px 38px #cccccc;
+}
+
+.col{
+    padding:0px;
+    /* background-color:#1B263B; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#login-card{
+ /* background-color:#778DA9; */
+ background:transparent;
+ color:white;
+ margin:10px;
+ border-radius:10px;
+ padding-right: 10px;
+ padding-left: 10px;
+ padding-top: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+nav{
+    padding:0;
+    
+}
+#appName{
+ color:#778DA9;
+}
+#adminLogin{
+ color:#778DA9;
+}
+header{
+    padding:0;
+    margin:0;
+}
+.container-fluid{
+    
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color:#0D1B2A;
+    
+}
+
+#back-btn{
+    text-decoration: none;
+    color:black;
+    border:#0D1B2A solid 5px; 
+    padding-right:5px;
+    
+}
+.btn-outline-primary{
+    margin-top: 20px;
+    
+}
+
+
+
+

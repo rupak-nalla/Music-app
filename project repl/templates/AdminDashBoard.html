@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="/static/css/style.css">
+          <style>
+               
+          </style>
+     </head>
+     <body>
+          <header>
+               <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                         <a class="navbar-brand" id="text" href="/Admin/Dashboard">Music Streaming app</a>
+                         <button class="navbar-toggler"  data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon">
+                              
+                         </span>
+                         </button>
+                         
+                         <div class="collapse navbar-collapse" id="navbarTogglerDemo02" >
+                              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                   <li class="nav-item">
+                                        <a id="text" class="nav-link active" aria-current="page" href="/Admin/Tracks">Tracks</a>
+                                   </li>
+                                   <li class="nav-item">
+                                        <a id="text" class="nav-link active" href="/Admin/Albums">Albums</a>
+                                   </li>
+                                   <li class="nav-item">
+                                        <a id="text" class="nav-link active" href="/Admin/Creators">Creators</a>
+                                   </li>
+                                   <li class="nav-item">
+                                        <a id="text" class="nav-link active" href="/adminLogin">logout</a>
+                                   </li>
+                                   
+                              </ul>
+                         
+                         </div>
+                    </div>
+               </nav>
+          </header>
+          <div id="main" style="padding:10px;">
+               
+               <div class="card" style="background-color: #415A77;" >
+                    <div class="card-header">
+                         <h3>
+                              Administrator Dash Board
+                        </h3>
+                    </div>
+                    <div class="card-body" style="padding:10px;">
+                         <div class="row">
+                    
+                              <div class="col">
+                              
+                                   <div class="card" style="width:250px;aspect-ratio:1/1">
+                                        <div class="card-header">
+                                             <h3 class="card-title">Normal users</h3>
+                                        </div>
+                                        <div class="card-body"  style="align-items: center;text-align: center;">
+                                             <h1 class="card-text" style="font-size: 70px;">{{users}}</h1>
+                                        </div>
+                                   </div>
+                                   
+                                        
+                              </div>
+                              <div class="col">
+                                   <div class="card" style="width:250px;aspect-ratio:1/1">
+                                        <div class="card-header">
+                                             <h3 class="card-title">Creators</h3>
+                                        </div>
+                                        <div class="card-body"  style="align-items: center;text-align: center;">
+                                             <h1 class="card-text" style="font-size: 70px;">{{Creators}}</h1>
+                                        </div>
+                                   </div>
+                                   
+                                        
+                              </div>
+                              <div class="col">
+                                   <div class="card" style="width:250px;aspect-ratio:1/1">
+                                        <div class="card-header">
+                                             <h3 class="card-title">Albums</h3>
+                                        </div>
+                                        <div class="card-body"  style="align-items: center;text-align: center;">
+                                             <h1 class="card-text" style="font-size: 70px;">{{albums}}</h1>
+                                        </div>
+                                        
+                                   </div>
+                                   
+                                        
+                              </div>
+                              <div class="col">
+                                   <div class="card" style="width:250px;aspect-ratio:1/1">
+                                        <div class="card-header">
+                                             <h3 class="card-title">Tracks</h3>
+                                        </div>
+                                        <div class="card-body" style="align-items: center;text-align: center;">
+                                             <h1 class="card-text" style="font-size: 70px;">{{Songs}}</h1>
+                                        </div>
+                                        
+                                   </div>
+                                   
+                                        
+                              </div>
+                              
+                         </div>
+                    </div>
+                    
+               </div>
+               <div class="row" style="padding-top: 10px;">
+                    
+                    <div class="col">
+                         <div class="card" style="width:100%;height:auto;background-color: #415A77;">
+                              <div class="card-header">
+                                   <h3 class="card-title">Insights</h3>
+                              </div>
+                              <div class="card-body">
+                                   <div class="row">
+                                        <div class="col"> 
+                                             <div class="card">
+                                                  <div class="card-header">
+                                                      <h3> Most rated songs</h3> 
+                                                  </div>
+                                                  <div class="card-body">
+                                                       <canvas id="myChart1"></canvas>
+                                                  </div>
+                                             </div>
+                                             
+                                        </div>
+                                        <div class="col">
+                                             <div class="card">
+                                                  <div class="card-header">
+                                                     <h3>  Most Streamed songs</h3> 
+                                                  </div>
+                                                  <div class="card-body">
+                                                       <canvas id="myChart2"></canvas>
+                                                  </div>
+                                             </div>
+                                             
+                                        </div>
+                                      
+                                   </div>
+                                   
+                                   
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+               
+          </div>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+          <script>
+               let ctx = document.getElementById('myChart1');
+               let chartData2={{ chartData2 | tojson |safe }};
+               new Chart(ctx, {
+               type: 'bar',
+               data: {
+                    labels:chartData2.MRSongNamesArr,
+                    datasets: [{
+                    label: 'rating',
+                    data:chartData2.MRNoArr,
+                    borderWidth: 1,
+                    backgroundColor: ['#1B263B']
+                    }]
+               },
+               options: {
+                    scales: {
+                    y: {
+                         beginAtZero: true,
+                         max:chartData2.MAXy+5
+                    }
+                    }
+               }
+               });
+          </script>
+          <script>
+               let ctx1 = document.getElementById('myChart2');
+               let chartData1={{ chartData1|tojson|safe }};
+               new Chart(ctx1, {
+               type: 'bar',
+               data: {
+                    labels: chartData1.MSSongNamesArr,
+                    datasets: [{
+                    label: 'No of streams',
+                    data: chartData1.MSNoArr,
+                    borderWidth: 1,
+                    backgroundColor: ['#1B263B']
+                    }]
+               },
+               options: {
+                    scales: {
+                    y: {
+                         beginAtZero: true,
+                         max:chartData1.MAXy+5
+                    }
+                    }
+               }
+               });
+          </script>
+     </body>
+</html>

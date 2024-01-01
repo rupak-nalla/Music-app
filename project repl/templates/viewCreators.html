@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="/static/css/style.css">
+          <style>
+               .inner-card{
+                    display: inline;
+               }
+               .title{
+                    display: flex;
+                    justify-content: left;
+
+               }
+               .buttons{
+                    display: flex;
+                    justify-content: right;
+               }
+          </style>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     </head>
+     <body>
+          <header>
+               <nav  class="navbar navbar-expand-lg bg-body-tertiary" style="padding-top:0px ;padding-bottom: 0px;">
+                    <div class="container-fluid">
+                         <a class="navbar-brand" href="/Admin/Dashboard" id="text">Music Streaming app</a>
+                         <button class="navbar-toggler"  data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon">
+                                   
+                              </span>
+                         </button>
+                         
+                         <div class="collapse navbar-collapse" id="navbarTogglerDemo02" >
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                 <li class="nav-item">
+                                      <a class="nav-link active" id="text" aria-current="page" href="/Admin/Tracks">Tracks</a>
+                                 </li>
+                                 <li class="nav-item">
+                                      <a class="nav-link active" id="text" href="/Admin/Albums">Albums</a>
+                                 </li>
+                                 <li class="nav-item">
+                                      <a class="nav-link active" id="text" href="/Admin/Creators">Creators</a>
+                                 </li>
+                                 <li class="nav-item">
+                                      <a class="nav-link active" id="text" href="/adminLogin">logout</a>
+                                 </li>
+                            </ul>
+                       </div>
+                    </div>
+               </nav>
+          </header>
+          <div id="main" style="padding:5px;">
+            <form action="/Admin/Creators" method="POST">
+                <div style="display: flex;justify-content:center;align-items:center">
+                    <h3>Creators</h3>
+                    <button class="btn btn-primary" type="submit">Black List</button>
+               </div>
+               {%for i in range(creatorsList|length)%}
+                    
+                        <div class="card" style="margin: 10px;background-color: #415A77;">
+                                <div class="card-body inner-card" style="display: flex;align-items:center">
+                                    <div class="card-body">
+                                        <h4 style="color:white;">{{creatorsList[i].UserName}}</h4>
+                                        <p>{{creatorsList[i].Bio}}</p>
+                                    </div>
+                                    <div class="form-check" style="float: right;">
+                                        
+                                        {%if(creatorsList[i].id in bcr)%}
+                                            <input class="form-check-input" type="checkbox" name="checkedCreators" id="flexCheckDefault" value="{{creatorsList[i].id}}" checked>
+                                        {%else%}
+                                            <input class="form-check-input" type="checkbox" name="checkedCreators" id="flexCheckDefault" value="{{creatorsList[i].id}}">
+                                    
+                                        {%endif%}
+                                    </div>
+                                </div>
+                        </div>
+                    
+                {%endfor%}
+            </form>
+                
+           
+          </div>
+     
+     </body>
+</html>

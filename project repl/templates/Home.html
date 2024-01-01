@@ -1,0 +1,647 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/static/css/Home-style.css">
+		<script src="static/JS/Home.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+		<style>
+		a:hover{
+			color:white;
+		}
+		.carousel-control-next, .carousel-control-prev {
+			width: 5%;
+		}
+		.card{
+			margin:10px;
+			border-radius: 30px;
+			background-color: #778DA9;
+			color: #0D1B2A;
+		}
+		.card-img-top{
+			padding:10px;
+			object-fit: cover;
+			border-radius: 30px;
+		}
+		#text{
+			color: #778DA9;
+		}
+		.container-fluid{
+			padding-top:10px;
+			padding-bottom:10px;
+			background-color: #0D1B2A;
+			
+		}
+		#main{
+			background-color: #1B263B;
+			color: white;
+		}
+		.navbar{
+			padding-top:0px;
+			padding-bottom: 0px;
+		}
+		
+		</style>
+		
+		
+	</head>
+
+		<header>
+			<nav  class="navbar navbar-expand-lg bg-body-tertiary" >
+			<div class="container-fluid">
+			<a class="navbar-brand" href="#" id="text">Music Streaming app</a>
+			<button class="navbar-toggler"  data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon">
+				
+			</span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+					<a class="nav-link active " style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" id="text" aria-current="page" href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+							<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
+					</svg>
+					Home</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link active " style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" id="text" aria-current="page" href="/Profile/{{Userid}}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+							<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+							</svg>
+							Profile</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link active " style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" id="text" aria-current="page" href="/Creator/{{Userid}}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brush-fill" viewBox="0 0 16 16">
+							<path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04z"/>
+							</svg>
+							creator account</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link active " style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"  id="text" aria-current="page" href="/">
+							
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+							</svg>
+							log out
+							
+					</a>
+					</li>
+					
+			</ul>
+			<svg id="text" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+			</svg>
+				<form class="d-flex" role="search" onsubmit="return false;" style="padding-left: 5px;">
+					<input class="form-control me-2"  id="search-input" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-primary" st style="text-decoration: none; color:white;"yle="margin-top: 0px;" type="submit"  onclick="search({{Userid}})">Search</button>
+				</form>
+			</div>
+			</div>
+			</nav>
+		</header>
+		
+		
+		<body>
+		
+		<div id="main" style="padding:20px">
+			<!-- search results -->
+			<div id="searchResults">
+				<div id="searchResultsHead"></div>
+				<div id="searchResultsContent">
+					 <!-- songs matched -->
+					 <div id="SongsMatchedHead"></div>
+					 <div id="SongsMatchedContent" style="display:flex;"></div>
+					 <!-- albums matched -->
+					 <div id="albumsMatchedHead"></div>
+					 <div id="albumsMatchedContent"style="display:flex;"></div>
+					 <!-- playlist matched -->
+					 <div id="playlistMatchedHead"></div>
+					 <div id="playlistMatchedContent" style="display:flex;"></div>
+					 <!-- Genres matched -->
+					 <div id="GenresMatchedHead"></div>
+					 <div id="GenresMatchedContent" style="display:flex;"></div>
+				</div>
+
+		   </div>
+			<!--Recommended tracks-->
+			<div>
+			<h3>Recommended Tracks</h3>
+			</div>
+			<div id="Recommended-Tracks" style="margin-bottom: 10px;">
+				{%if(not song|length)%}
+					No songs Available
+				
+				{%else%}
+				<div id="carousel1" class="carousel slide" >
+			
+					<div class="carousel-inner">
+						{%for i in range(song|length)%}
+							{%if i==0%}
+								<div class="carousel-item active">
+							{%else%}
+								<div class="carousel-item ">
+							{%endif%}
+							<div class="row">
+							{%for j in range(song[i]|length)%}
+							
+								<div class="col-md-3">
+								<div class="card" >
+										
+									<img src="/{{song[i][j].CoverImgLoc}}" height="250px" width="250px" class="card-img-top" alt="cover image" >
+									<div class="card-body" style="align-items:center;">
+										<div >
+											<div class="row">
+												<div class="col">
+													<h5 class="card-title text-truncate" >{{song[i][j].SongName}}</h5>
+													<p class="card-text text-truncate">By : {{song[i][j].artistName}}</p>
+												</div>
+												<div class="col">
+													<div style="float:right;">
+														<button class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/Song/{{Userid}}/{{song[i][j].Sid}}/play" style="text-decoration:none;">Play
+															<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+															<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+															</svg>
+														</a></button>
+														</div>
+												</div>
+											</div>
+											
+										</div>
+										<hr>
+										<div class="row">
+											<div class="col">
+												<div style="float:left;">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
+														<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+													</svg>
+													{{song[i][j].AvgRating}}
+												</div>
+											</div>
+											<div class="col">
+												<div style="float:right;">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+														<path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5"/>
+													</svg>
+													{{song[i][j].NoOfStreams}}
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div style=" padding:0px 5px 10px 5px; text-align: center;align-items: center;">
+										
+										
+										
+									</div>
+									
+								</div>
+								</div>
+								
+							
+							{%endfor%}
+							</div>
+							</div>
+						{%endfor%}
+						
+						
+						
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+					</div> 
+		
+					</div>
+				{%endif%}
+			
+
+			<div class="card-body inner-card" style="display: flex;align-items:center;margin-bottom:5px">
+			<div class="card-body">
+			<h4>Your Playlist</h4>
+			</div>
+			
+			<div style="float: right;">
+			<button style="margin-left:5px" class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/Home/{{Userid}}/createPlaylist" style="text-decoration: none;">create playlist</a></button>
+			</div>
+			</div>
+			<!--Your Playlist-->
+			<div id="Your-Playlist" style="margin-bottom: 10px;">
+				{%if(not courselSetplaylist|length)%}
+					No playlists Available add now!!!
+				{%else%}
+				<div id="carousel2" class="carousel slide" >
+					<div class="carousel-inner" >
+						{%for i in range(courselSetplaylist|length)%}
+							{%if i==0%}
+								<div class="carousel-item active">
+							{%else%}
+								<div class="carousel-item ">
+							{%endif%}
+							<div class="row">
+								{%for j in range(courselSetplaylist[i]|length)%}
+								
+									<div class="col-md-3">
+									<div class="card">
+										<img src="/static/images/album logo.jpg" class="card-img-top" alt="cover image" >
+									<div class="card-body" >
+										<div style="float:left;">
+											<h5 class="card-title">{{courselSetplaylist[i][j].PlaylistName}}</h5>
+										</div>
+										<div style="float:right;">
+										<button class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/Home/{{Userid}}/playlist/{{courselSetplaylist[i][j].Pid}}" style="text-decoration:none;">view
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+											<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+											</svg>
+										</a></button>
+										</div>
+									</div>
+									</div>
+									</div>
+									
+								
+								{%endfor%}
+								</div>
+							
+							</div>
+						{%endfor%}
+						
+						
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev" style="width: 50px;">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next" style="width: 50px;">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+					</div>
+				{%endif%}
+				
+				
+			</div>
+			<h3>Albums</h3>
+			<div id="albums" style="margin-bottom: 10px;">
+				<div>
+					{%if(not albums|length)%}
+						No albums Available..
+					{%else%}
+					<div id="carousel3" class="carousel slide">
+					
+						<div class="carousel-inner">
+							{%for i in range(albums|length)%}
+								{%if i==0%}
+									<div class="carousel-item active">
+								{%else%}
+									<div class="carousel-item ">
+								{%endif%}
+							
+							
+								<div class="row">
+									{%for j in range(albums[i]|length)%}
+										<div class="col-md-3">
+										<div class="card">
+											<img src="/static/images/album logo.jpg" class="card-img-top" alt="cover image" >
+										<div class="card-body">
+											
+											<div style="float:left;">
+												<h5 class="card-title">{{albums[i][j].AlbumName}}</h5>
+												<p class="text-wrap">By : {{albums[i][j].artistName}}</p>
+											</div>
+											<div style="float: right;">
+											<button class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/{{Userid}}/Album/{{albums[i][j].Aid}}/View" style="text-decoration:none;">view
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+												<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+												</svg>
+											</a></button>
+											</div>
+										</div>
+										</div>
+										</div>
+									{%endfor%}
+									
+								</div>
+							</div>
+							{%endfor%}
+							
+							
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev" style="width: 50px;">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next" style="width: 50px;">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+						</div>
+					{%endif%}
+					
+			</div>
+
+
+			<!--Genre-->
+			<div>
+			<h3>Genre</h3>
+			</div>
+			<div id="Genre" style="margin-bottom: 10px;">
+			<div id="carousel4" class="carousel slide">
+			
+			<div class="carousel-inner">
+				{%for i in range(Genre|length)%}
+					{%if i==0%}
+						<div class="carousel-item active">
+					{%else%}
+						<div class="carousel-item ">
+					{%endif%}
+						<div class="row">
+							{%for j in range(Genre[i]|length)%}
+
+							<div class="col-md-3">
+							<div class="card">
+								<img src="/static/images/{{Genre[i][j]}}.jpg" class="card-img-top" alt="cover image" >
+							<div class="card-body">
+								<div style="float:left;">
+									<h5 class="card-title">{{Genre[i][j]}}</h5>
+								</div>
+								
+								<div style="float:right;">
+								<button class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/viewGenre/{{Userid}}/{{Genre[i][j]}}" style="text-decoration:none;">view
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+									<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+									</svg>
+								</a></button>
+								</div>
+							</div>
+							</div>
+							</div>
+							{%endfor%}
+							
+						</div>
+					
+					</div>
+				{%endfor%}
+				
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carousel4" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carousel4" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+			</div>
+		</div>
+		</body>
+		<script>
+			let found=false;
+			function search(Userid){
+				
+				let searchVal=document.getElementById("search-input").value;
+				if(  searchVal !=""){
+					let searchResultsHead=document.getElementById("searchResultsHead");
+				searchResultsHead.innerHTML=`<h3>Search results</h3>`;
+				let searchResultsContent=document.getElementById("searchResultsContent")
+				if(searchResultsContent.innerHTML==`<h5>No songs found</h5>`){
+					searchResultsContent.innerHTML=`
+					<div id="searchResultsHead"></div>
+				<div id="searchResultsContent">
+					 <!-- songs matched -->
+					 <div id="SongsMatchedHead"></div>
+					 <div id="SongsMatchedContent" style="display:flex;"></div>
+					 <!-- albums matched -->
+					 <div id="albumsMatchedHead"></div>
+					 <div id="albumsMatchedContent"style="display:flex;"></div>
+					 <!-- playlist matched -->
+					 <div id="playlistMatchedHead"></div>
+					 <div id="playlistMatchedContent" style="display:flex;"></div>
+					 <!-- Genres matched -->
+					 <div id="GenresMatchedHead"></div>
+					 <div id="GenresMatchedContent" style="display:flex;"></div>
+					`;
+				}
+					searchSongs(Userid);
+					searchAlbums(Userid);
+					searchplaylist(Userid);
+					searchGenre(Userid);
+					if(!found ){
+						
+						
+						
+						searchResultsContent.innerHTML=`<h5>No songs found</h5>`;
+					}
+				}
+				else{
+					alert("No search query found!!")
+				}
+				
+			}
+			
+			function searchSongs(Userid){
+				let songsData={{songsData|tojson|safe}};
+				let songsMatched=[];
+				let searchVal=document.getElementById("search-input").value;
+				let SongsMatchedContent=document.getElementById("SongsMatchedContent");
+				let SongsMatchedHead=document.getElementById("SongsMatchedHead");
+				SongsMatchedHead.innerHTML=``
+				SongsMatchedContent.innerHTML=``
+
+				for(let i=0;i<songsData.length;i++){
+					if(songsData[i].songName.toLowerCase().includes(searchVal.toLowerCase())){
+						found=true;
+						songsMatched.push(songsData[i])
+					}
+				}
+				if(songsMatched.length>0){
+					let SongsMatchedHead=document.getElementById("SongsMatchedHead");
+					SongsMatchedHead.innerHTML=`<h4>Songs Matched</h4>`;
+					
+					for (let i=0;i<songsMatched.length;i++){
+						SongsMatchedContent.innerHTML+=`
+						<div class="col-md-3">
+						<div class="card" >
+									<img src="/${songsMatched[i].CoverImgLoc}" width="250px" height="250px" class="card-img-top" alt="cover image" >
+								<div class="card-body" style="align-items:center;">
+									<div style="float:left;">
+										<h5 class="card-title">${songsMatched[i].songName}</h5>
+										<p class="card-text">by :${songsMatched[i].artistName}</p>
+									</div>
+									<div style="float:right;">
+									<button class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/Song/${Userid}/${songsMatched[i].Sid}/play" style="text-decoration:none;">Play
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+										<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+										</svg>
+									</a></button>
+									</div>
+								</div>
+								<hr>
+								<div style=" padding:0px 5px 10px 5px; text-align: center;align-items: center;">
+									<div style="float:left;">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
+											<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+										  </svg>
+										  ${songsMatched[i].AvgRating}
+									</div>
+									<div style="float:right;">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+											<path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5"/>
+										  </svg>
+										  ${songsMatched[i].NoOfStreams}
+									</div>
+									
+								</div>
+								
+								</div>
+							</div>
+						`;
+					}
+				}
+			}
+			function searchAlbums(Userid) {
+				let albumsData={{albumsData|tojson|safe}};
+				let albumsMatchedContent=document.getElementById("albumsMatchedContent");
+				albumsMatchedContent.innerHTML=``
+				let albumsMatchedHead=document.getElementById("albumsMatchedHead");
+				albumsMatchedHead.innerHTML=``
+				let albumsMatched=[];
+				let searchVal=document.getElementById("search-input").value;
+				for(let i=0;i<albumsData.length;i++){
+					if(albumsData[i].AlbumName.toLowerCase().includes(searchVal.toLowerCase())){
+						found=true;
+						albumsMatched.push(albumsData[i])
+					}
+					else if(albumsData[i].Genrei.toLowerCase().includes(searchVal.toLowerCase())){
+						found=true;
+						albumsMatched.push(albumsData[i])
+					}
+					else if(albumsData[i].artist.toLowerCase().includes(searchVal.toLowerCase())){
+						found=true;
+						albumsMatched.push(albumsData[i])
+					}
+				}
+				if(albumsMatched.length>0){
+					let albumsMatchedHead=document.getElementById("albumsMatchedHead");
+					albumsMatchedHead.innerHTML=`<h4>Albums Matched</h4>`;
+					
+					for (let i=0;i<albumsMatched.length;i++){
+						albumsMatchedContent.innerHTML+=`
+						<div class="col-md-3">
+							<div class="card">
+								<img src="/static/images/album logo.jpg" class="card-img-top" alt="cover image" >
+								<div class="card-body">
+									<div style="float:left;">
+										<h5 class="card-title">${albumsMatched[i].AlbumName}</h5>
+									</div>
+									<div style="float: right;">
+										<button class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/${Userid}/Album/${albumsMatched[i].Aid}/View" style="text-decoration:none;">view
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+											<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+											</svg>
+										</a></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						`;
+					}
+				}
+			}
+			function searchGenre(Userid) {
+				let GenreData={{GenreData|tojson|safe}};
+				let GenresMatchedContent=document.getElementById("GenresMatchedContent");
+				GenresMatchedContent.innerHTML=``
+				let GenresMatchedHead=document.getElementById("GenresMatchedHead");
+				GenresMatchedHead.innerHTML=``
+				let GenreMatched=[];
+				let searchVal=document.getElementById("search-input").value;
+				for(let i=0;i<GenreData.length;i++){
+					console.log(GenreData[i].Genre);
+					if(GenreData[i].Genre.toLowerCase().includes(searchVal.toLowerCase())){
+						found=true;
+						GenreMatched.push(GenreData[i])
+					}
+				}
+				console.log(GenreMatched)
+				if(GenreMatched.length>0){
+					let GenresMatchedHead=document.getElementById("GenresMatchedHead");
+					GenresMatchedHead.innerHTML=`<h4>Genre Matched</h4>`;
+					
+					for (let i=0;i<GenreMatched.length;i++){
+						GenresMatchedContent.innerHTML+=`
+						<div class="col-md-3">
+							<div class="card">
+								<img src="/static/images/${GenreMatched[i].Genre}.jpg" class="card-img-top" alt="cover image" >
+							<div class="card-body">
+								<div style="float:left;">
+									<h5 class="card-title">${GenreMatched[i].Genre}</h5>
+								</div>
+								
+								<div style="float:right;">
+								<button class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/viewGenre/${Userid}/${GenreMatched[i].Genre}" style="text-decoration:none;">Play
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+									<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+									</svg>
+								</a></button>
+								</div>
+							</div>
+							</div>
+							</div>
+						`;
+					}
+				}
+			}
+			function searchplaylist(Userid) {
+				let playlistData={{playlistData|tojson|safe}};
+				let playlistMatched=[];
+				let searchVal=document.getElementById("search-input").value;
+				let playlistMatchedContent=document.getElementById("playlistMatchedContent");
+				playlistMatchedContent.innerHTML=``
+				let playlistMatchedHead=document.getElementById("playlistMatchedHead");
+				playlistMatchedHead.innerHTML=``
+				for(let i=0;i<playlistData.length;i++){
+					if(playlistData[i].PlaylistName.toLowerCase().includes(searchVal.toLowerCase())){
+						found=true;
+						playlistMatched.push(playlistData[i])
+					}
+				}
+				if(playlistMatched.length>0){
+					playlistMatchedHead.innerHTML=`<h4>Playlist Matched</h4>`;
+					
+					for (let i=0;i<playlistMatched.length;i++){
+						playlistMatchedContent.innerHTML+=`
+						<div class="col-md-3">
+									<div class="card">
+										<img src="/static/images/album logo.jpg" class="card-img-top" alt="cover image" >
+									<div class="card-body" >
+										<div style="float:left;">
+											<h5 class="card-title">${playlistMatched[i].PlaylistName}</h5>
+										</div>
+										<div style="float:right;">
+										<button class="btn btn-primary"><a style="text-decoration: none; color:white;" href="/Home/${Userid}/playlist/${playlistMatched[i].Pid}" style="text-decoration:none;">view
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+											<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+											</svg>
+										</a></button>
+										</div>
+									</div>
+									</div>
+									</div>
+						`;
+					}
+				}
+			}
+		</script>
+	</html>
+

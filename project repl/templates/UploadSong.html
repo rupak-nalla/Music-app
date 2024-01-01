@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+     <title>
+     Upload Song
+     </title>
+     <head>
+          
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="/static/css/style.css">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     </head>
+     
+     <body>
+          <header>
+               <nav  class="navbar navbar-expand-lg bg-body-tertiary" style="padding-top:0%; padding-bottom:0%">
+                    <div class="container-fluid">
+                         <a class="navbar-brand" href="#" id="text">Music Streaming app</a>
+                         <button class="navbar-toggler"  data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon">
+                              
+                         </span>
+                         </button>
+                         
+                         <div class="collapse navbar-collapse" id="navbarTogglerDemo02" >
+                              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                   <li class="nav-item">
+                                        <a class="nav-link active" id="text" aria-current="page" href="/Creator/{{userid}}">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                                                  <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+                                                  <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/>
+                                                </svg>
+                                             Dashboard</a>
+                                   </li>
+                                   <li class="nav-item">
+                                        <a class="nav-link active" id="text" href="/Home/{{userid}}">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                             </svg>User account</a>
+                                   </li>
+                                   <li class="nav-item">
+                                        <a class="nav-link active" id="text" href="/">
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                                             <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+                                        </svg>logout</a>
+                                   </li>
+                              </ul>
+                         
+                         </div>
+                    </div>
+               </nav>
+          </header>
+          
+          <div id="main">
+               <div class="row">
+                    
+                    <div class="col" >
+                         <div class="card text-center" style="margin:10px;border-radius:10px;background-color: #415A77;" >
+                              <div class="card-body" > 
+                                   <div class="card-title">
+                                        <h3>Upload song</h3>
+                                   </div>
+                                   {%if(exists)%}
+                                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                             <div>
+                                             Song name already exists use different name
+                                             </div>
+                                        </div>
+                                   {%endif%}
+                                   <div class="card-text" >
+                                        <form action="/Creator/{{userid}}/UploadSong" method="post" enctype="multipart/form-data">
+                                             <div class="form-floating mb-3">
+                                                  <input type="text" name="SongName" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                  <label for="floatingInput">Song Name</label>
+                                             </div>
+                                             <div class="form-floating mb-3">
+                                                  <input type="text" name="ArtistName" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                  <label for="floatingInput">Artist Name</label>
+                                             </div>
+                                             <select class="form-select" name="Genre" aria-label="Default select example" style="margin: 10px 0px;">
+                                                  <option value="Love" selected>Love</option>
+                                                  <option value="Devotional">Devotional</option>
+                                                  <option value="HipHop">HipHop</option>
+                                                  <option value="Rock">Rock</option>
+                                                  <option value="Country">Country</option>
+                                             </select>
+                                             <div class="form-floating mb-3">
+                                                  <input type="date" name="Date" class="form-control" id="floatingInput" placeholder="dd-mm-yyyy" required>
+                                                  <label for="floatingInput">Release Date</label>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="formFile" class="form-label">upload Lyric file 
+                                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                                                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                                       </svg>
+                                                  </label>
+                                                  <input class="form-control" name="LyricFile" type="file" accept=".txt" id="formFile" placeholder="Lyrics file" required>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="formFile" class="form-label">upload cover Image
+                                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                                                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                                       </svg>
+                                                  </label>
+                                                  <input class="form-control" name="imgFile" type="file" id="formFile" accept=".jpeg, .jpg" placeholder="Cover image" required>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="formFile" class="form-label">upload Audio file 
+                                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                                                            <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                                       </svg>
+                                                  </label>
+                                                  <input class="form-control" name="audioFile" type="file" accept=".mp3" id="formFile" placeholder="Upload song" required>
+                                             </div>
+                                             <button class="btn btn-primary" type="submit">Submit</button>
+                                        </form>
+                                        
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+          
+     </body>     
+</html>
